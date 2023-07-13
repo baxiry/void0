@@ -1,0 +1,8 @@
+{
+  "name": "helloCapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite",
+  "id": "5505515d"
+}
