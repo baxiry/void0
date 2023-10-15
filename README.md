@@ -1,21 +1,16 @@
 # ws
 
-ws is a simple command line websocket client designed for exploring and debugging websocket servers. ws includes readline-style keyboard shortcuts, persistent history, and colorization.
+zarashell is a simple command line to interactive with zaradb, it make end to end testing zaradb so easy.
 
 ![Example usage recording](https://hashrocket-production.s3.amazonaws.com/uploads/blog/misc/ws/ws.gif)
 
-## Installation
-
-```
-go get -u github.com/hashrocket/ws
-```
 
 ## Usage
 
-Simply run ws with the destination URL. For security some sites check the origin header. ws will automatically send the destination URL as the origin. If this doesn't work you can specify it directly with the `--origin` parameter.
+Simply run 'zarashell' command with the your zaradb URL
 
 ```
-$ ws ws://localhost:3000/ws
+$ zarashell ws://localhost:3000/ws
 > {"type": "echo", "payload": "Hello, world"}
 < {"type":"echo","payload":"Hello, world"}
 > {"type": "broadcast", "payload": "Hello, world"}
