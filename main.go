@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/eiannone/keyboard"
 	"github.com/gorilla/websocket"
 )
 
@@ -21,6 +22,8 @@ func main() {
 	defer conn.Close()
 
 	// handle std input
+	kinput()
+
 	reader := bufio.NewReader(os.Stdin)
 	for {
 		fmt.Print(dbName + "> ")
@@ -44,5 +47,28 @@ func main() {
 		}
 		fmt.Println(string(msg))
 
+	}
+
+}
+
+func kinput() {
+
+	if err := keyboard.Open(); err != nil {
+		panic(err)
+	}
+	defer func() {
+		_ = keyboard.Close()
+	}()
+
+	fmt.Println("Press ESC to quit")
+	for {
+		char, key, err := keyboard.GetKey()
+		if err != nil {
+			panic(err)
+		}
+		fmt.Printf("You pressed: rune %q, key %X\r\n", char, key)
+		if key == keyboard.KeyEsc {
+			break
+		}
 	}
 }
