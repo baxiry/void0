@@ -1,13 +1,11 @@
-# ws
+# 
 
-zarashell is a simple command line to interactive with zaradb, it make end to end testing zaradb so easy.
+ is a simple command line to interactive with zaradb, it make end to end testing zaradb so easy.
 
-![Example usage recording](https://hashrocket-production.s3.amazonaws.com/uploads/blog/misc/ws/ws.gif)
 
 
 ## Usage
 
-Simply run 'zarashell' command with the your zaradb URL
 
 ```
 $ zarashell ws://localhost:3000/ws
